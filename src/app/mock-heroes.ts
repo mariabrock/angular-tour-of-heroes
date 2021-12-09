@@ -12,3 +12,5 @@ export const HEROES: Hero[] = [
   { id: 19, name: 'Piccolo' },
   { id: 20, name: 'Master Roshi' }
 ];
+
+//fake data! we will get data from a server later in the tutorial

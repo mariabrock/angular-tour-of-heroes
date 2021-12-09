@@ -10,7 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
+  // more metadata: this allows you to import angular libraries whose functionality
+  //we can use within the app
   declarations: [
+    //components have to be declared in order for the application to make use of them
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
@@ -18,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
+    //directives must be imported before the application can apply their functionality
     BrowserModule,
     FormsModule,
     AppRoutingModule
