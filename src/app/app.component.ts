@@ -1,4 +1,4 @@
-// this information acts on the html, ie: passing data thrugh
+// this information acts on the html, ie: passing data through
 
 import { Component } from '@angular/core';
 

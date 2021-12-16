@@ -12,11 +12,9 @@ import { Hero } from '../hero';
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
 
-  @Input() hero?: Hero;
-  // a decorator that will bind to the HeroesComponent
-  // This component only receives a hero object through its hero property and displays it.
+export class HeroDetailComponent implements OnInit {
+  hero: Hero | undefined;
 
   constructor(
     //we are injecting these services
@@ -40,6 +38,13 @@ export class HeroDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 
 }
