@@ -1,12 +1,12 @@
 <!-- can present any hero, not just a selected hero. So replace "selectedHero" with "hero" everywhere -->
-
 <div *ngIf="hero">
-<!-- removes details from the DOM if there is no hero that the user has selected. once selected ngIf will allow a hero o show. -->
-    <h2>{{hero.name | uppercase}} Details</h2>
+    <!-- removes details from the DOM if there is no hero that the user has selected. once selected ngIf will allow a hero o show. -->
+    <h2>{{hero.name | uppercase}} Details</h2> <!-- the pipe here allows the uppercase function to act on the her name-->
     <div><span>id: </span>{{hero.id}}</div>
     <div>
         <label for="hero-name">Hero name: </label>
         <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
     
+    <button (click)="goBack()">Go Back</button>
 </div>

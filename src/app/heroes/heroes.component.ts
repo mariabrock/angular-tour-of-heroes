@@ -16,13 +16,16 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
   constructor(private heroService: HeroService) { }
+  // this injects the HeroService.ts to the HeroesComponent and identifies it as the service DI site
 
   ngOnInit(): void {
     // a life cycle hook. you want to put your initialization logic here
     this.getHeroes();
+    //this allows Angular to call OnInit after constructing the HeroesComponent
   }
 
   getHeroes(): void {
+    //this retrieves the heroes from the service
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }

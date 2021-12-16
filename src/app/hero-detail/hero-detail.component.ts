@@ -19,9 +19,13 @@ export class HeroDetailComponent implements OnInit {
   // This component only receives a hero object through its hero property and displays it.
 
   constructor(
+    //we are injecting these services
     private route: ActivatedRoute,
+    //interested in the route's parameters extracted from the URL
     private heroService: HeroService,
+    //gets hero data from the remote server
     private location: Location
+    //an Angular service for interacting with the browser. We'll use it to navigate back to the view that navigated here
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +36,10 @@ export class HeroDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
