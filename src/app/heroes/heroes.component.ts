@@ -1,31 +1,31 @@
+//The parent HeroesComponent will control the child HeroDetailComponent by sending it a new hero to display whenever the user selects a hero from the list.
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
 
 @Component({
+  // a decorator function that specifies metadata for the HeroesComponent.component
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+//export your data so you can import is somewhere else!
 
-  selectedHero?: Hero;
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService) { }
+  // this injects the HeroService.ts to the HeroesComponent and identifies it as the service DI site
 
   ngOnInit(): void {
+    // a life cycle hook. you want to put your initialization logic here
     this.getHeroes();
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+    //this allows Angular to call OnInit after constructing the HeroesComponent
   }
 
   getHeroes(): void {
+    //this retrieves the heroes from the service
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }

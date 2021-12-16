@@ -1,4 +1,13 @@
-<h1>{{title}}</h1>
+<!-- concerned with displaying the data you provide -->
+<h1>{{title}}</h1> 
+<!-- this is an example of interpolation binding - represents the the value of a title -->
 
-<app-heroes></app-heroes>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+
+<router-outlet></router-outlet>
 <app-messages></app-messages>
+
+<!--This is now simply a navigation shell for the rest of the application.-->

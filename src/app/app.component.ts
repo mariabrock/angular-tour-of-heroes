@@ -1,3 +1,5 @@
+// this information acts on the html, ie: passing data thrugh
+
 import { Component } from '@angular/core';
 
 @Component({
