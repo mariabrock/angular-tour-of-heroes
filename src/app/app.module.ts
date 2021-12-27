@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material/material.module';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -28,6 +30,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
   imports: [
     //directives must be imported before the application can apply their functionality
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

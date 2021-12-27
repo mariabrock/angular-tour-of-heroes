@@ -1,16 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Application-wide Styles */
 h1 {
     color: #2980B9;
     font-family: 'Montserrat', sans-serif;
     font-size: 250%;
   }
+
   h2, h3 {
     color: #34495E ;
     font-family: 'Roboto Slab', serif;
     font-weight: lighter;
   }
+
   body {
     margin: 2em;
   }
@@ -18,7 +21,10 @@ h1 {
     color: #34495E;
     font-family: 'Montserrat', sans-serif;
   }
+
   /* everywhere else */
   * {
     font-family: 'Roboto Slab', serif;
   }
+
+
